@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Documentation Generator",
+  "description": "Automatically generates comprehensive project documentation including usage examples, README updates, and removes invalid references when Python files or requirements are modified",
+  "version": "1",
+  "when": {
+    "type": "userTriggered",
+    "patterns": [
+      "*.py",
+      "requirements.txt",
+      "README.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Generate comprehensive documentation for the current project: 1. Analyze all Python files to provide usage examples based on existing code 2. Create or Update the README.md based on the latest project updates and functionality 3. Remove invalid or incorrect references in the project README.md. Use the virtual environment at ./venv/bin/python for any Python operations needed."
+  }
+}

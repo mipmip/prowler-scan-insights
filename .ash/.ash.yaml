@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/awslabs/automated-security-helper/refs/heads/main/automated_security_helper/schemas/AshConfig.json
+project_name: my-project
+global_settings:
+  severity_threshold: MEDIUM
+  ignore_paths:
+    - path: 'archive/'
+      reason: 'Archive data only'
+    - path: 'venv'
+      reason: 'Virtual environment'
+    - path: htmlcov
+      reason: 'Coverage report'
+  # Findings to suppress based on rule ID, file path, and line numbers
+  suppressions:
+    - rule_id: html.security.audit.missing-integrity.missing-integrity # Scanner-specific rule ID
+      path: 'sample-scan-insights/prowler_scan_insights-sample.html' # File path (supports glob patterns)
+      reason: 'HTML dashboard file generated as an output of the assessment. The integrity checks not applicable'
+
+# Whether to fail with non-zero exit code if actionable findings are found
+fail_on_findings: true

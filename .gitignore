@@ -1,0 +1,34 @@
+#IDE Files
+.vscode
+
+
+#Python Cache
+.pytest_cache
+__pycache__
+tests/__pycache__
+
+#Exclusions
+archive/
+logs/*
+output*/*
+*output*/
+*output*/*
+tests/*
+.DS_Store
+
+
+# Exclude entire .ash folder except specific files
+.ash/*
+!.ash/ash_output/
+.ash/ash_output/*
+!.ash/ash_output/reports/
+.ash/ash_output/reports/*
+!.ash/ash_output/reports/ash.html
+!.ash/.ash.yaml
+
+
+#Ignore any dashboards generated in this repository. The prowler_scan_insights-sample.html can be viewed as a sample output
+prowler_scan_insights.html
+
+.kiro/specs/pdf-executive-summary
+TODO.md
